@@ -11,7 +11,7 @@ application = app
 CORS(app)
 
 
-client = pymongo.MongoClient("mongodb+srv://dbAdmin:dbPassword@cluster0.rxwsz.azure.mongodb.net/<dbname>?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://dbAdmin:dbPassword@cluster0.rxwsz.azure.mongodb.net/merakidb?retryWrites=true&w=majority")
 db = pymongo.database.Database(client, 'merakidb')
 
 
