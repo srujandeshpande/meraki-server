@@ -24,7 +24,7 @@ def hello_world():
 def create_story():
     inputData = request.json
     Story = pymongo.collection.Collection(db, 'Story')
-    Story.insertOne(inputData)
+    Story.insert_one(inputData)
     return "Story Created"
 
 
