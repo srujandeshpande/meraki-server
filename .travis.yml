@@ -3,6 +3,9 @@ language: python
 script:
   - python -m pytest -v
 
+before_deploy:
+  - docker build -t build --tag=srujandeshpande/meraki-server .
+
 deploy:
   provider: script
   script: bash docker_push
