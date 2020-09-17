@@ -20,6 +20,16 @@ def hello_world():
     return 'Hello, World!'
 
 
+@app.route('/api/story', methods=['GET'])
+def get_stories():
+    Story = pymongo.collection.Collection(db, 'Story')
+    data = json.loads(dumps(Story.find()))
+    rdata = dict()
+    rdata['count'] = len(data)
+    rdata['data'] = data
+    return rdata
+
+
 @app.route('/api/story', methods=['POST'])
 def create_story():
     inputData = request.json
